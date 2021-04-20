@@ -16,6 +16,10 @@
 .collection-sort:first-child {
     padding-right: 20px;
 }
+
+.collection-sort select{
+  text-transform: capitalize;
+}
   
 label {
     color: #666;

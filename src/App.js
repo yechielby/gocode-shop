@@ -1,6 +1,7 @@
 import Header from './Header';
 import Products from './Products';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
 
@@ -165,11 +166,28 @@ function App() {
     "category": "women clothing",
     "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
     }
-    ];
+  ];
+  
+  const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
+
+  const [category, setCategory] = useState('');
+  const [sortBy, setSortBy] = useState('id');
+  const [order, setOrder] = useState('1');
+
+  function categorySlected(category) {
+    setCategory(category);
+  }
+  function sortSlected(value) {
+    const [fieldName, direction] = value.split(',');
+    setSortBy(fieldName);
+    setOrder(direction);
+  }
+
   return (
     <div className="App">
-      <Header/>
-      <Products products={products}/>
+      <Header categories={categories} categorySlected={categorySlected} sortSlected={sortSlected}/>
+      <Products products={products.filter((p)=>( (p.category === category) || (!category.length) ))
+        .sort((a,b)=>((a[sortBy]>b[sortBy]?1:-1)*order))}/>
     </div>
   );
 }
