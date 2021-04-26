@@ -1,6 +1,6 @@
 import './Header.css';
 
-function Header({categories, categorySlected, sortSlected}) {
+function Header({categories, onCategorySlected, onSortSlected}) {
     return (
         <nav className="product-filter">
             <h1>Jackets</h1>
@@ -8,7 +8,7 @@ function Header({categories, categorySlected, sortSlected}) {
             <div className="sort">
                 <div className="collection-sort">
                     <label>Filter by:</label>
-                    <select onChange={(event)=>categorySlected(event.target.value)}>
+                    <select onChange={(event)=>onCategorySlected(event.target.value)}>
                         <option value="">All Category</option>
                         { categories.map(category => <option value={category} key={category}>{category}</option>) }
                     </select>
@@ -16,7 +16,7 @@ function Header({categories, categorySlected, sortSlected}) {
 
                 <div className="collection-sort">
                     <label>Sort by:</label>
-                    <select onChange={(event)=>sortSlected(event.target.value)}>
+                    <select onChange={(event)=>onSortSlected(event.target.value)}>
                         <option value="id,1">Featured</option>
                         <option value="id,-1">New Arrival</option>
                         <option value="title,1">Alphabetically, A-Z</option>
