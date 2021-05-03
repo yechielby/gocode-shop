@@ -1,0 +1,36 @@
+.cart {
+  background: white;
+  padding: 15px;
+}
+.cart .title {
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 2em;
+  background: #f6f6f6;
+  position: relative;
+  padding: 0 30px;
+}
+
+.cart .title .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: red;
+}
+.cart .subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-top: 1px solid gray;
+  padding-top: 15px;
+}
+.cart-list {
+  overflow: scroll;
+  height: calc(100vh - 222px);
+}
+@media (max-width: 920px) {
+  .cart-list {
+    overflow: scroll;
+    height: calc(100vh - 102px);
+  }
+}

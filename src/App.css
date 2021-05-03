@@ -1,0 +1,35 @@
+.content {
+  width: 70%;
+  float: right;
+}
+.closeCart .content {
+  width: 100%;
+}
+.openCart .sidebar {
+  display: block;
+}
+.closeCart .sidebar {
+  display: none;
+}
+.sidebar {
+  position: fixed;
+  width: calc(90% * 0.28);
+  max-width: calc(1240px * 0.28);
+  /* width: 28%; */
+  float: left;
+}
+
+@media (max-width: 920px) {
+  .content {
+    width: 100%;
+    float: initial;
+  }
+  .sidebar {
+    top: 0;
+    width: 90%;
+    max-width: 90%;
+    height: 100%;
+    background: white;
+    z-index: 1;
+  }
+}

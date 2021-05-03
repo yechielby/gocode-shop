@@ -1,9 +1,29 @@
+import { useEffect } from 'react';
+
 import './Header.css';
 
-function Header({categories, onCategorySlected, onSortSlected}) {
+function Header({categories, onCategorySlected, onSortSlected, setShowCart, countItems}) {
+
+    
+    useEffect(()=> {
+        swing();
+      }, [countItems]);
+
+      function swing() {
+        let swing = document.getElementById('swing');
+        swing.classList.remove('swing'); 
+        setTimeout(function() {
+            swing.classList.add('swing'); 
+        }, 100);
+      }
+
     return (
         <nav className="product-filter">
-            <h1>Jackets</h1>
+        
+            <div id="swing" className={`cart-icon swing items-${countItems}`}
+                onClick={() => {setShowCart(true); swing();}}>🛒<span>{countItems}</span></div>
+
+            <h1>My Online Store</h1>
 
             <div className="sort">
                 <div className="collection-sort">

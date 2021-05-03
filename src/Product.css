@@ -1,36 +1,69 @@
 .product-card {
-    display: flex;
-    flex-direction: column;
-  
-    padding: 2%;
-    flex: 1 16%;
-  
-    background-color: #fff;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+
+  padding: 2%;
+  flex: 1 16%;
+
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
 }
-  
+.product-image {
+  position: relative;
+}
 .product-image img {
-    width: 100%;
+  width: 100%;
 }
-  
+
 .product-info {
-    margin-top: auto;
-    padding-top: 20px;
-    text-align: center;
+  margin-top: auto;
+  padding-top: 20px;
+  text-align: center;
 }
 @media (max-width: 920px) {
-    .product-card {
-        flex: 1 21%;
-    }
-  
-    .products .product-card:first-child,
-    .products .product-card:nth-child(2) {
-        flex: 2 46%;
-    }
+  .product-card {
+    flex: 1 21%;
+  }
+
+  .products .product-card:first-child,
+  .products .product-card:nth-child(2) {
+    flex: 2 46%;
+  }
 }
-  
+
 @media (max-width: 600px) {
-    .product-card {
-        flex: 1 46%;
-    }
+  .product-card {
+    flex: 1 46%;
+  }
+}
+.counts {
+  display: none;
+  position: absolute;
+  top: calc(50% - 24px);
+  width: 100%;
+  text-align: center;
+  background: #ffffff8c;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+.product-card:hover .counts {
+  display: block;
+}
+
+.plus,
+.number,
+.minus {
+  font-size: 3rem;
+  margin: 0 5px;
+}
+.plus,
+.minus {
+  cursor: pointer;
+}
+.minus.display {
+  visibility: hidden;
 }
