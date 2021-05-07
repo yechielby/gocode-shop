@@ -26,7 +26,7 @@
 }
 .cart-list {
   overflow: scroll;
-  height: calc(100vh - 222px);
+  height: calc(100vh - 260px);
 }
 @media (max-width: 920px) {
   .cart-list {
