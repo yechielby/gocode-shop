@@ -1,0 +1,26 @@
+.product-card.product-details {
+  min-height: calc(100vh - 118px);
+  padding: 15px 2%;
+}
+.product-details .product-image {
+  margin: 0 auto;
+}
+.product-details .product-image img {
+  max-height: 30vh;
+  width: inherit;
+}
+.product-details .title {
+  font-weight: 500;
+  margin: 10px 0 20px 0;
+}
+.product-details .price {
+  font-weight: 900;
+  font-size: 2em;
+  margin: 20px 0;
+  color: red;
+}
+.product-details .product-info:last-child {
+  margin-bottom: auto;
+  padding-bottom: 20px;
+  margin-top: inherit;
+}

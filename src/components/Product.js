@@ -1,4 +1,5 @@
-import { useCart } from "./contexts/CartContext";
+import { Link } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
 
 import "./Product.css";
 
@@ -29,8 +30,11 @@ function Product({ product }) {
           </span>
         </div>
       </div>
+
       <div className="product-info">
-        <h5>{product.title}</h5>
+        <Link to={`/products/${product.id}`}>
+          <h5>{product.title}</h5>
+        </Link>
         <h6>${product.price.toFixed(2)}</h6>
       </div>
     </div>
