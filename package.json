@@ -8,8 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "start-dev": "nodemon server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"", 
-    "heroku-postbuild": "cd client && npm i && npm run build"
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "heroku-postbuild": "cd client && npm i -f && npm run build"
   },
   "devDependencies": {
     "concurrently": "^6.2.0"
