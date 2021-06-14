@@ -13,7 +13,7 @@ function Products() {
   const [sliderValue, setSliderValue] = useState([0, 1000]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("/api/products")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

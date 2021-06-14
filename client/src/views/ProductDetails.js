@@ -11,7 +11,7 @@ function ProductDetails() {
   let count = (cart.length && cart.find((p) => p.id === +id)?.count) || 0;
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`/api/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProduct(data);
